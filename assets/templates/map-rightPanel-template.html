@@ -1,0 +1,31 @@
+<div class="container bs-header" ng-controller="MapController as mapCtrl">
+    <div class="row">
+        <div class="col-md-9">
+            <div>
+                <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
+                    <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" click="'onMarkClick'">
+                        <ui-gmap-windows show="show">
+                            <div ng-non-bindable>{{title}}</div>
+                        </ui-gmap-windows>
+                    </ui-gmap-markers>
+                </ui-gmap-google-map>
+            </div>
+            <h3>Filter:</h3>
+            <div>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> All
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> 土石流
+                </label>
+                <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox3" value="option3"> 淹水
+                </label>
+            </div>
+            <div class="bg-danger" style="line-height:30px;">
+                我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈
+            </div>
+        </div>
+        <div class="col-md-3" ui-view></div>
+    </div>
+</div>
