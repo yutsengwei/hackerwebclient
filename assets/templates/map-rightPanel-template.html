@@ -3,11 +3,21 @@
         <div class="col-md-9">
             <div>
                 <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
-                    <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" click="'onMarkClick'">
+                    <!-- <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" click="'onMarkClick'">
                         <ui-gmap-windows show="show">
                             <div ng-non-bindable>{{title}}</div>
                         </ui-gmap-windows>
-                    </ui-gmap-markers>
+                    </ui-gmap-markers> -->
+                    <!-- event marks -->
+                    <ui-gmap-marker ng-repeat="m in eventMarks track by m.id" coords="m.coords" options="m.options" events="m.events" idkey="m.id" events="m.events">
+                        <ui-gmap-window show="m.windowOptions.visible">
+                            <div>{{m.infor.address}}</div>
+                        </ui-gmap-window>
+                    </ui-gmap-marker>
+                    <!-- Typhoon ploylines -->
+                    <ui-gmap-polyline ng-repeat="p in typhoonPolylines" path="p.path" stroke="p.stroke" visible='p.visible' geodesic='p.geodesic' fit="false" editable="p.editable" draggable="p.draggable" icons='p.icons' events="p.events"></ui-gmap-polyline>
+                    <!-- typhoon circles -->
+                    <ui-gmap-circle ng-repeat="c in typhoonCircles track by c.id" center="c.center" stroke="c.stroke" fill="c.fill" radius="c.radius" visible="c.visible" geodesic="c.geodesic" editable="c.editable" draggable="c.draggable" clickable="c.clickable" control="c.control"></ui-gmap-circle>
                 </ui-gmap-google-map>
             </div>
             <h3>Filter:</h3>
