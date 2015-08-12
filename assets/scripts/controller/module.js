@@ -3,6 +3,9 @@
 
     app.config(uiRouteConfig);
     app.run(init);
+    app.run(function($templateCache, $http) {
+        $http.get('assets/templates/map-filter-template.html', {cache:$templateCache});
+    });
 
 
     uiRouteConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
