@@ -31,7 +31,7 @@
     init.$inject = ['$state'];
 
     function init($state) {
-        
+        $state.go('map.chat');
     }
 
 })();
