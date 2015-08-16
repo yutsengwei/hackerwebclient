@@ -1,7 +1,7 @@
-<div class="container bs-header" ng-controller="MapController as mapCtrl">
+<div class="container header" ng-controller="MapController as mapCtrl">
     <div class="row">
         <div class="col-md-9">
-            <div style="margin-bottom:15px;">
+            <div class="map-section">
                 <ui-gmap-google-map center="map.center" zoom="map.zoom" bounds="map.bounds" options="map.options">
                     <!-- <ui-gmap-markers models="randomMarkers" coords="'self'" icon="'icon'" click="'onMarkClick'">
                         <ui-gmap-windows show="show">
@@ -24,8 +24,8 @@
                     -->
                 </ui-gmap-google-map>
             </div>
-            <h3>Filter:</h3>
-            <div style="margin-bottom:15px;">
+            <h3 class="filter-header">Filter:</h3>
+            <div class="filter-section">
                 <label class="checkbox-inline">
                     <input type="checkbox" id="inlineCheckbox1" value="option1"> All
                 </label>
@@ -36,7 +36,7 @@
                     <input type="checkbox" id="inlineCheckbox3" value="option3"> 淹水
                 </label>
             </div>
-            <div class="bg-danger" style="line-height:30px;">
+            <div class="bg-danger carousel-section">
                 我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈我是跑馬燈
             </div>
         </div>

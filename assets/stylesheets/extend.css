@@ -1,0 +1,52 @@
+
+    .content {
+        margin-top: 20px;
+    }
+    .content .header {
+        padding-top: 50px;
+    }
+    /* map */
+    .map-section {
+        margin-bottom:15px;
+    }
+    .angular-google-map-container {
+        height: 500px;
+        /*width:600px;*/
+    }
+    
+    .filter-section {
+        margin-bottom: 15px;
+    }
+    
+    .carousel-section {
+        line-height: 30px;
+    }
+    
+    /* chat */
+    .chat-room .section {
+        height:500px; overflow: scroll;
+    }
+    .chat-room .message {
+        line-height:40px;
+    }
+    .chat-room .picture {
+        border-radius: 500px;
+        width: 30;
+        height: 30px;
+        overflow: hidden;
+    }
+    
+    .bubble {
+        border-radius: 10px;
+        background-color: #F8C301;
+        padding: 5px;
+        margin: 0px;
+        background: -webkit-linear-gradient(grey, lightgrey);
+        /* For Safari 5.1 to 6.0 */
+        background: -o-linear-gradient(grey, lightgrey);
+        /* For Opera 11.1 to 12.0 */
+        background: -moz-linear-gradient(grey, lightgrey);
+        /* For Firefox 3.6 to 15 */
+        background: linear-gradient(grey, lightgrey);
+        /* Standard syntax */
+    }
