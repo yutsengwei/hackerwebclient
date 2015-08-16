@@ -1,10 +1,12 @@
 (function() {
-    var app = angular.module('AngularMapModule', ['ui.router', 'uiGmapgoogle-maps', 'firebase']);
+    var app = angular.module('AngularMapModule', ['ui.router', 'uiGmapgoogle-maps', 'firebase', 'angularSoap']);
 
     app.config(uiRouteConfig);
     app.run(init);
     app.run(function($templateCache, $http) {
-        $http.get('assets/templates/map-filter-template.html', {cache:$templateCache});
+        $http.get('assets/templates/map-filter-template.html', {
+            cache: $templateCache
+        });
     });
 
 
@@ -31,10 +33,12 @@
     }
 
 
-    init.$inject = ['$state'];
+    init.$inject = ['$state','$soap'];
 
-    function init($state) {
+    function init($state, $soap) {
         $state.go('map.chat');
+
+        $soap.post('http://www.pigtower.com:3521/hackerapi-web/DisasterSoap','HelloWorld');
     }
 
 })();

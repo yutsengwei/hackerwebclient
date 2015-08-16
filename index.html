@@ -5,60 +5,31 @@
     <meta charset="UTF-8">
     <title>AngularMap</title>
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <style>
-    .angular-google-map-container {
-        height: 500px;
-        /*width:600px;*/
-    }
-    
-    .picture-chat {
-        border-radius: 500px;
-        width: 30;
-        height: 30px;
-        overflow: hidden;
-    }
-    
-    .bubble {
-        border-radius: 10px;
-        background-color: #F8C301;
-        padding: 5px;
-        margin: 0px;
-        background: -webkit-linear-gradient(grey, lightgrey);
-        /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(grey, lightgrey);
-        /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(grey, lightgrey);
-        /* For Firefox 3.6 to 15 */
-        background: linear-gradient(grey, lightgrey);
-        /* Standard syntax */
-    }
-    
-    .bs-header {
-        padding-top: 50px;
-    }
-    .content {
-        margin-top: 20px;
-    }
-    </style>
+    <link href="assets/stylesheets/extend.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/scripts/library/jquery/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
     <script type="text/javascript" src="bower_components/lodash/lodash.min.js"></script>
-    
     <script src='https://maps.googleapis.com/maps/api/js?sensor=false'></script>
+    <script type="text/javascript" src="bower_components/angular-soap/soapclient.js"></script>
+    <script type="text/javascript" src="bower_components/angular-soap/angular.soap.js"></script>
     <script src="https://cdn.firebase.com/js/client/2.2.1/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/1.0.0/angularfire.min.js"></script>
-
-
+    <!-- module -->
     <script type="text/javascript" src="assets/scripts/controller/module.js"></script>
+    <!-- service -->
+    <script type="text/javascript" src="assets/scripts/service/chat-service.js"></script>
+    <!-- controller -->
     <script type="text/javascript" src="assets/scripts/controller/map-controller.js"></script>
     <script type="text/javascript" src="assets/scripts/controller/chat-controller.js"></script>
+    <script type="text/javascript" src="assets/scripts/controller/nav-controller.js"></script>
 </head>
 
 <body>
     <header class="navbar navbar-fixed-top navbar-default">
-        <div class="container">
+        <div class="container" ng-controller="NavController as vm">
             <nav class="collapse navbar-collapse">
                 <div class="navbar-header"></div>
                 <ul class="nav navbar-nav">
@@ -67,13 +38,12 @@
                     <li><a href="">News</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="">Login</a></li>
+                    <li><a href="" ng-click="vm.loginFB()">Login</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <div class="content" ui-view="content"></div>
-    
     <footer>
         <div class="container">
         </div>
