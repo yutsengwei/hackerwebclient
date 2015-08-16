@@ -1,11 +1,11 @@
-<div ng-controller="ChatController as vm">
+<div ng-controller="ChatController as vm" class="chat-room">
     <div>
         <div>
             <h5>Chat Room</h5>
-            <ul class="list-unstyled" style="height:500px; overflow: scroll;">
+            <ul class="list-unstyled section">
                 <li ng-repeat="msg in vm.messageAry">
-                    <div style="line-height:40px;">
-                        <img class="picture-chat" src="{{msg.picture}}" /> {{msg.name}} :
+                    <div class="message">
+                        <img class="picture" src="{{msg.picture}}" /> {{msg.name}} :
                         <span>{{msg.text}}</span>
                     </div>
                 </li>
