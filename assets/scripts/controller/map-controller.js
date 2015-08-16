@@ -14,7 +14,7 @@
         $scope.typhoonMarks = [];
         $scope.typhoonCircles = [];
 
-        $scope.eventMarks = [];
+        $scope.eventMarkers = [];
 
         $scope.map = {
             center: {
@@ -141,11 +141,11 @@
             },
             infor: "test3",
         });
-        $scope.eventMarks.push(mark1);
+        $scope.eventMarkers.push(mark1);
 
-        $scope.eventMarks.push(mark2);
+        $scope.eventMarkers.push(mark2);
 
-        $scope.eventMarks.push(mark3);
+        $scope.eventMarkers.push(mark3);
 
     }
 
